@@ -11,7 +11,11 @@ function App() {
 
   return (
     <>
-    
+    <Routes>
+      <Route>
+        <DisplayNavbar/>
+      </Route>
+    </Routes>
     </>
     
 )}
