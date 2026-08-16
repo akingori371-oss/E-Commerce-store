@@ -1,42 +1,44 @@
-function Products() {
-  const products = [
-    {
-      id: 1,
-      name: "Classic Black T-Shirt",
-      price: 1500,
+// src/components/ProductCard.jsx
 
-    },
-    {
-      id: 2,
-      name: "Premium Hoodie",
-      price: 3500,
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
-    },
-    {
-      id: 3,
-      name: "Blue Denim Jacket",
-      price: 4500,
-
-    },
-    {
-      id: 4,
-      name: "White Sneakers",
-      price: 5000,
-
-    },
-    {
-      id: 5,
-      name: "Black Cap",
-      price: 1200,
-
-    },
-  ];
+function ProductCard({ product }) {
+  const { addToCart } = useCart();
 
   return (
-    <>
-    {products}
-    </>
+    <div className="rounded-xl border bg-white p-4 shadow-sm">
+      <img
+        src={product.thumbnail}
+        alt={product.title}
+        className="h-56 w-full rounded-lg object-cover"
+      />
+
+      <h2 className="mt-4 text-lg font-semibold">
+        {product.title}
+      </h2>
+
+      <p className="mt-2 text-gray-600">
+        ${product.price}
+      </p>
+
+      <div className="mt-4 flex gap-2">
+        <Link
+          to={`/products/${product.id}`}
+          className="rounded-lg border px-4 py-2"
+        >
+          View
+        </Link>
+
+        <button
+          onClick={() => addToCart(product)}
+          className="rounded-lg bg-black px-4 py-2 text-white"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
   );
 }
 
-export default Products;
+export default ProductCard;
