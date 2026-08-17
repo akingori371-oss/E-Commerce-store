@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AuthProvider } from "./login";
+import { CartProvider } from "./cart";
 
 function DisplayNavbar() {
 
