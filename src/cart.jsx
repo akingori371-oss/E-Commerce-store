@@ -1,11 +1,28 @@
-
-
 import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([
+    {
+      id: 1,
+      title: "Wireless Headphones",
+      price: 50,
+      quantity: 1,
+    },
+    {
+      id: 2,
+      title: "Smart Watch",
+      price: 80,
+      quantity: 2,
+    },
+    {
+      id: 3,
+      title: "Sneakers",
+      price: 65,
+      quantity: 1,
+    },
+  ]);
 
   function addToCart(product) {
     setCartItems((currentItems) => {
