@@ -2,7 +2,7 @@ import { useState } from 'react'
 import DisplayNavbar from './Navbar'
 import { Route , Routes } from 'react-router-dom'
 import Products from './products'
-import Cart from './cart'
+import { CartProvider } from './cart'
 
 
 import './App.css'
