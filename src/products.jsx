@@ -1,44 +1,22 @@
 
-import { CartProvider } from "./cart";
-import { Link } from "react-router-dom";
 import { useCart } from "./cart";
+import ProductCard from "./products";
 
-function ProductCard({ product }) {
-  const { addToCart } = useCart();
+function Products() {
+  const { cartItems } = useCart();
 
   return (
-    <div className="rounded-xl border bg-white p-4 shadow-sm">
-      <img
-        src={product.thumbnail}
-        alt={product.title}
-        className="h-56 w-full rounded-lg object-cover"
-      />
+    <div className="grid grid-cols-1 gap-4 p-6 md:grid-cols-3">
 
-      <h2 className="mt-4 text-lg font-semibold">
-        {product.title}
-      </h2>
+      {cartItems.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
+      ))}
 
-      <p className="mt-2 text-gray-600">
-        ${product.price}
-      </p>
-
-      <div className="mt-4 flex gap-2">
-        <Link
-          to={`/products/${product.id}`}
-          className="rounded-lg border px-4 py-2"
-        >
-          View
-        </Link>
-
-        <button
-          onClick={() => addToCart(product)}
-          className="rounded-lg bg-black px-4 py-2 text-white"
-        >
-          Add to Cart
-        </button>
-      </div>
     </div>
   );
 }
 
-export default ProductCard;
+export default Products;
