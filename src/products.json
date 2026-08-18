@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Nike Air Max 270",
+    "category": "Shoes",
+    "price": 150,
+    "description": "Comfortable and stylish sneakers for everyday wear."
+
+  },
+  {
+    "id": 2,
+    "name": "Classic Hoodie",
+    "category": "Clothing",
+    "price": 65,
+    "description": "A comfortable cotton hoodie perfect for casual outfits."
+    
+  },
+  {
+    "id": 3,
+    "name": "Smart Watch Pro",
+    "category": "Electronics",
+    "price": 120,
+    "description": "A modern smartwatch for tracking fitness and notifications."
+ 
+  },
+  {
+    "id": 4,
+    "name": "Wireless Headphones",
+    "category": "Electronics",
+    "price": 90,
+    "description": "Wireless headphones with high-quality sound and comfortable ear cushions."
+    
+  },
+  {
+    "id": 5,
+    "name": "Leather Backpack",
+    "category": "Accessories",
+    "price": 80,
+    "description": "A stylish and durable backpack suitable for school, work, or travel."
+   
+  },
+  {
+    "id": 6,
+    "name": "Denim Jacket",
+    "category": "Clothing",
+    "price": 75,
+    "description": "A classic denim jacket that works with almost any outfit."
+   
+  },
+  {
+    "id": 7,
+    "name": "Running Shoes",
+    "category": "Shoes",
+    "price": 110,
+    "description": "Lightweight running shoes designed for comfort and performance."
+  
+  },
+  {
+    "id": 8,
+    "name": "Sunglasses",
+    "category": "Accessories",
+    "price": 45,
+    "description": "Stylish sunglasses with a modern frame and UV protection."
+    
+  }
+]
