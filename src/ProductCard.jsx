@@ -38,10 +38,10 @@ function ProductCard({ product }) {
       <p className="mt-2 text-sm text-gray-600">
         {product.description}
       </p>
-
+        <div className="flex flex-col gap-3">
       <button
         onClick={addCart}
-        className="mt-4 w-full rounded-lg bg-black px-4 py-2 text-white mr-3"
+        className="mt-4 w-full rounded-lg bg-black px-4 py-2 text-white"
       >
         Add to Cart
       </button>
@@ -50,7 +50,7 @@ function ProductCard({ product }) {
        onClick={removeCart}
        className="mt-4 w-full rounded-lg bg-black px-4 py-2 text-white "
        >Remove from cart</button>
-     
+     </div>
     </div>
   );
 }
