@@ -1,14 +1,11 @@
-
-import { useCart } from "./cart";
-import ProductCard from "./products";
+import products from "./products.json";
+import ProductCard from "./ProductCard";
 
 function Products() {
-  const { cartItems } = useCart();
-
   return (
     <div className="grid grid-cols-1 gap-4 p-6 md:grid-cols-3">
-
-      {cartItems.map((product) => (
+      
+      {products.map((product) => (
         <ProductCard
           key={product.id}
           product={product}
