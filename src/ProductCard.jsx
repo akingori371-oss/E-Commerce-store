@@ -1,16 +1,27 @@
 import { useCart } from "./cart";
+import { useState } from "react";
 
 function ProductCard({ product }) {
+    const [count , setCount] = useState(0);
+    const [message , setMessage] = useState("");
   const { addToCart } = useCart();
 
-  return (
-    <div className="rounded-xl border bg-white p-4 shadow-sm">
+  function addCart(){
+    setCount(count + 1);
+    setMessage(`${product.name} was added to the cart`);
+  }
 
-      <img
-        src={product.image}
-        alt={product.name}
-        className="h-60 w-full rounded-lg object-cover"
-      />
+  function removeCart(){
+    setCount(count - 1);
+    setMessage(`${product.name} was removed from the cart`)
+  }
+
+  return (
+<div className="rounded-xl border bg-white p-4 shadow-sm">
+               
+        <p>Cart items: {count}</p>
+        <p>{message}</p>       
+      
 
       <h2 className="mt-3 text-xl font-bold">
         {product.name}
@@ -29,12 +40,17 @@ function ProductCard({ product }) {
       </p>
 
       <button
-        onClick={() => addToCart(product)}
-        className="mt-4 w-full rounded-lg bg-black px-4 py-2 text-white"
+        onClick={addCart}
+        className="mt-4 w-full rounded-lg bg-black px-4 py-2 text-white mr-3"
       >
         Add to Cart
       </button>
 
+      <button
+       onClick={removeCart}
+       className="mt-4 w-full rounded-lg bg-black px-4 py-2 text-white "
+       >Remove from cart</button>
+     
     </div>
   );
 }
